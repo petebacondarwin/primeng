@@ -1,8 +1,8 @@
 import {NgModule,Component,ElementRef,AfterViewChecked,OnDestroy,Input,Renderer2,Inject,forwardRef,ViewChild} from '@angular/core';
 import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/animations';
 import {CommonModule} from '@angular/common';
-import {DomHandler} from '../dom/domhandler';
-import {MenuItem} from '../common/menuitem';
+import {DomHandler} from 'primeng/dom';
+import {MenuItem} from 'primeng/common';
 import {RouterModule} from '@angular/router';
 
 @Component({
@@ -188,15 +188,15 @@ export class SlideMenu implements AfterViewChecked, OnDestroy {
         }
     }
 
-    @ViewChild('container') set container(element: ElementRef) {
+    @ViewChild('container', {static: false}) set container(element: ElementRef) {
         this.containerViewChild = element;
     }
 
-    @ViewChild('backward') set backward(element: ElementRef) {
+    @ViewChild('backward', {static: false}) set backward(element: ElementRef) {
         this.backwardViewChild = element;
     }
 
-    @ViewChild('slideMenuContent') set slideMenuContent(element: ElementRef) {
+    @ViewChild('slideMenuContent', {static: false}) set slideMenuContent(element: ElementRef) {
         this.slideMenuContentViewChild = element;
     }
 

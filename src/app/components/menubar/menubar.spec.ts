@@ -2,7 +2,7 @@ import { TestBed, ComponentFixture, fakeAsync, tick } from '@angular/core/testin
 import { By } from '@angular/platform-browser';
 import { Menubar, MenubarSub } from './menubar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '../../../../node_modules/@angular/router/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Menubar', () => {
 
@@ -55,7 +55,6 @@ describe('Menubar', () => {
 		expect(subMenu.baseZIndex).toEqual(20);
 		expect(subMenu.autoZIndex).toEqual(false);
 		expect(subMenu.autoDisplay).toBeUndefined();
-		expect(subMenu.autoDisplay).toEqual(menubar.autoDisplay);
 		expect(subMenu.autoZIndex).toEqual(menubar.autoZIndex);
 		expect(subMenu.baseZIndex).toEqual(menubar.baseZIndex);
 	});

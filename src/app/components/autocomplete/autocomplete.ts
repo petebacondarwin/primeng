@@ -1,11 +1,11 @@
 import {NgModule,Component,ViewChild,ElementRef,AfterViewChecked,AfterContentInit,DoCheck,OnDestroy,Input,Output,EventEmitter,ContentChildren,QueryList,TemplateRef,Renderer2,forwardRef,ChangeDetectorRef,IterableDiffers} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/animations';
-import {InputTextModule} from '../inputtext/inputtext';
-import {ButtonModule} from '../button/button';
-import {SharedModule,PrimeTemplate} from '../common/shared';
-import {DomHandler} from '../dom/domhandler';
-import {ObjectUtils} from '../utils/objectutils';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import {SharedModule,PrimeTemplate} from 'primeng/common';
+import {DomHandler} from 'primeng/dom';
+import {ObjectUtils} from 'primeng/utils';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 
 export const AUTOCOMPLETE_VALUE_ACCESSOR: any = {
@@ -164,13 +164,13 @@ export class AutoComplete implements AfterViewChecked,AfterContentInit,OnDestroy
 
     @Input() autocomplete: string = 'off';
 
-    @ViewChild('in') inputEL: ElementRef;
+    @ViewChild('in', {static: false}) inputEL: ElementRef;
 
-    @ViewChild('multiIn') multiInputEL: ElementRef;
+    @ViewChild('multiIn', {static: false}) multiInputEL: ElementRef;
 
-    @ViewChild('multiContainer') multiContainerEL: ElementRef;
+    @ViewChild('multiContainer', {static: false}) multiContainerEL: ElementRef;
 
-    @ViewChild('ddBtn') dropdownButton: ElementRef;
+    @ViewChild('ddBtn', {static: true}) dropdownButton: ElementRef;
 
     @ContentChildren(PrimeTemplate) templates: QueryList<any>;
 

@@ -1,6 +1,6 @@
 import {NgModule,Component,ElementRef,AfterViewInit,Input,Output,EventEmitter,forwardRef,ViewChild, ChangeDetectorRef} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {InputTextModule} from '../inputtext/inputtext';
+import {InputTextModule} from 'primeng/inputtext';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 
 export const SPINNER_VALUE_ACCESSOR: any = {
@@ -101,7 +101,7 @@ export class Spinner implements AfterViewInit,ControlValueAccessor {
 
     thousandRegExp: RegExp;
     
-    @ViewChild('inputfield') inputfieldViewChild: ElementRef;
+    @ViewChild('inputfield', {static: true}) inputfieldViewChild: ElementRef;
     
     constructor(public el: ElementRef, public cd: ChangeDetectorRef) {}
 

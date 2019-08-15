@@ -1,9 +1,9 @@
 import {NgModule,Component,ElementRef,OnDestroy,Input,Output,ContentChildren,EventEmitter,QueryList,Renderer2,ChangeDetectorRef,ViewChild} from '@angular/core';
 import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/animations';
 import {CommonModule} from '@angular/common';
-import {DomHandler} from '../dom/domhandler';
-import {MenuItem} from '../common/menuitem';
-import {ButtonModule} from '../button/button';
+import {DomHandler} from 'primeng/dom';
+import {MenuItem} from 'primeng/common';
+import {ButtonModule} from 'primeng/button';
 import {Router} from '@angular/router';
 import {RouterModule} from '@angular/router';
 
@@ -85,9 +85,9 @@ export class SplitButton implements OnDestroy {
 
     @Input() hideTransitionOptions: string = '195ms ease-in';
 
-    @ViewChild('container') containerViewChild: ElementRef;
+    @ViewChild('container', {static: true}) containerViewChild: ElementRef;
     
-    @ViewChild('defaultbtn') buttonViewChild: ElementRef;
+    @ViewChild('defaultbtn', {static: true}) buttonViewChild: ElementRef;
 
     overlay: HTMLDivElement;
                     

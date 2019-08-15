@@ -1,6 +1,6 @@
 import { NgModule, Component, Input, AfterViewInit, OnDestroy, ElementRef, NgZone, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomHandler } from '../dom/domhandler';
+import { DomHandler } from 'primeng/dom';
 
 @Component({
     selector: 'p-scrollPanel',
@@ -24,13 +24,13 @@ export class ScrollPanel implements AfterViewInit, OnDestroy {
     
     constructor(public el: ElementRef, public zone: NgZone) {}
 
-    @ViewChild('container') containerViewChild: ElementRef;
+    @ViewChild('container', {static: true}) containerViewChild: ElementRef;
 
-    @ViewChild('content') contentViewChild: ElementRef;
+    @ViewChild('content', {static: true}) contentViewChild: ElementRef;
 
-    @ViewChild('xBar') xBarViewChild: ElementRef;
+    @ViewChild('xBar', {static: true}) xBarViewChild: ElementRef;
     
-    @ViewChild('yBar') yBarViewChild: ElementRef;
+    @ViewChild('yBar', {static: true}) yBarViewChild: ElementRef;
 
     scrollYRatio: number;
 

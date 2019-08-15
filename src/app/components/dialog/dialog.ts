@@ -2,8 +2,8 @@ import {NgModule,Component,ElementRef,OnDestroy,Input,Output,EventEmitter,Render
         ContentChildren,QueryList,ViewChild,NgZone} from '@angular/core';
 import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/animations';
 import {CommonModule} from '@angular/common';
-import {DomHandler} from '../dom/domhandler';
-import {Header,Footer,SharedModule} from '../common/shared';
+import {DomHandler} from 'primeng/dom';
+import {Header,Footer,SharedModule} from 'primeng/common';
 
 let idx: number = 0;
 
@@ -115,11 +115,11 @@ export class Dialog implements OnDestroy {
     
     @ContentChildren(Footer, {descendants: false}) footerFacet: QueryList<Header>;
         
-    @ViewChild('titlebar') headerViewChild: ElementRef;
+    @ViewChild('titlebar', {static: true}) headerViewChild: ElementRef;
     
-    @ViewChild('content') contentViewChild: ElementRef;
+    @ViewChild('content', {static: false}) contentViewChild: ElementRef;
 
-    @ViewChild('footer') footerViewChild: ElementRef;
+    @ViewChild('footer', {static: true}) footerViewChild: ElementRef;
 
     @Output() onShow: EventEmitter<any> = new EventEmitter();
 

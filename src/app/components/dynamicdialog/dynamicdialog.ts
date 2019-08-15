@@ -3,7 +3,7 @@ import { trigger,state,style,transition,animate,AnimationEvent } from '@angular/
 import { DynamicDialogContent } from './dynamicdialogcontent';
 import { DynamicDialogConfig } from './dynamicdialog-config';
 import { CommonModule } from '@angular/common';
-import { DomHandler } from '../dom/domhandler';
+import { DomHandler } from 'primeng/dom';
 import { DynamicDialogRef } from './dynamicdialog-ref';
 
 @Component({
@@ -50,9 +50,9 @@ export class DynamicDialogComponent implements AfterViewInit, OnDestroy {
 
 	mask: HTMLDivElement;
 
-	@ViewChild(DynamicDialogContent) insertionPoint: DynamicDialogContent;
+	@ViewChild(DynamicDialogContent, {static: false}) insertionPoint: DynamicDialogContent;
 	
-	@ViewChild('mask') maskViewChild: ElementRef;
+	@ViewChild('mask', {static: false}) maskViewChild: ElementRef;
 
 	childComponentType: Type<any>;
 
